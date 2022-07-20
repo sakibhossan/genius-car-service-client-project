@@ -10,19 +10,33 @@ import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import CheckOut from "./Pages/CheckOut/CheckOut/CheckOut";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
+import AddService from "./Pages/AddService/AddService";
+import MangeServices from "./Pages/MangeServices/MangeServices";
 function App() {
   return (
     <div>
       <Header></Header>
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/" element={ <Home></Home>}></Route>
+         
+        
         <Route path="/home" element={<Home></Home>}></Route>
+         
+      
         <Route path="/service/:serviceid" element={<ServiceDetaill></ServiceDetaill>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/checkout" element={<RequireAuth>
           <CheckOut></CheckOut>
+        </RequireAuth>
+      }></Route>
+        <Route path="/addservice" element={<RequireAuth>
+          <AddService></AddService>
+        </RequireAuth>
+      }></Route>
+        <Route path="/manage" element={<RequireAuth>
+          <MangeServices></MangeServices>
         </RequireAuth>
       }></Route>
 
